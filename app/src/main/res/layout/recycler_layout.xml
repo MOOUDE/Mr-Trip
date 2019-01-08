@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_marginBottom="20dp"
     android:layout_height="wrap_content"
+    android:theme="@style/AppTheme"
 
     >
 
@@ -51,10 +52,10 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/joumhouria"
+                    android:fontFamily="@font/hacentrarzahd"
                     android:text="شوي بالاحراش"
                     android:textColor="@color/PrimaryText"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.04"
                     app:layout_constraintStart_toStartOf="parent"
@@ -67,10 +68,10 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginLeft="32dp"
                     android:layout_marginBottom="16dp"
-                    android:fontFamily="@font/joumhouria"
+                    android:fontFamily="@font/hacentrarzahd"
                     android:text="2-11-2018 "
                     android:textColor="@color/PrimaryText"
-                    android:textSize="20sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toTopOf="@+id/view"
                     app:layout_constraintStart_toEndOf="@+id/TripName"
                     app:layout_constraintTop_toTopOf="@+id/TripName" />
@@ -111,22 +112,22 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/joumhouria"
+                        android:fontFamily="@font/hacentrarzahd"
                         android:gravity="center"
                         android:text="احجز "
                         android:textColor="@color/colorAccent"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="28dp"
                         android:layout_margin="8dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/joumhouria"
+                        android:fontFamily="@font/hacentrarzahd"
                         android:gravity="center"
                         android:text="التفاصيل "
                         android:textColor="@color/PrimaryText"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                 </LinearLayout>
 

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "973826483796",
+    "firebase_url": "https://mr-trip-25312.firebaseio.com",
+    "project_id": "mr-trip-25312",
+    "storage_bucket": "mr-trip-25312.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973826483796:android:1191f8175d999162",
+        "android_client_info": {
+          "package_name": "com.example.mrsnack.mrtrip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973826483796-e9cuis9e1rm00lbhhtq48ei5st3ul2jd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mrsnack.mrtrip",
+            "certificate_hash": "604685e3727dfb50f4f3255a626e4b441a5767af"
+          }
+        },
+        {
+          "client_id": "973826483796-b43qb3nufigpuulg2tbnllkkogtmk52j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAILAk6G9CqMYDZQraQir9w06MM72THgDY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973826483796-b43qb3nufigpuulg2tbnllkkogtmk52j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

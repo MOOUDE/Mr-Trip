@@ -15,9 +15,7 @@ import com.example.mrsnack.mrtrip.DetailsActvitiy;
 import com.example.mrsnack.mrtrip.Moduls.Trip;
 import com.example.mrsnack.mrtrip.R;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerViewAdapter.MyViewHolder> {
 
@@ -51,7 +49,7 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
        // myViewHolder.type.setText(trip.getTripType());
         myViewHolder.time.setText(trip.getTripDate());
      //   myViewHolder.location.setText(trip.getLocation());
-        myViewHolder.name.setText(trip.getTitle());
+        myViewHolder.name.setText(trip.getTripTitle());
 
 
 
@@ -69,11 +67,13 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
                 intent.putExtra("Image",trip.getTripImage());
                 intent.putExtra("type" ,trip.getTripType());
                 intent.putExtra("date" , trip.getTripDate());
-                intent.putExtra("title",trip.getTitle());
+                intent.putExtra("title",trip.getTripTitle());
                 intent.putExtra("location",trip.getLocation());
-                intent.putExtra("price",trip.getPrice());
+                intent.putExtra("price",trip.getTripPrice());
                 intent.putExtra("transport",trip.getTransport());
-                intent.putExtra("extra" , trip.getExtras());
+                intent.putExtra("extra" , trip.getTripExtras());
+
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 context.startActivity(intent);
             }
@@ -93,7 +93,7 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         // each data item is just a string in this case
         ImageView image;
-        TextView name,time,price,type;
+        TextView name,time;
 
         private RecyclerOnClickListner clicklistener;
 

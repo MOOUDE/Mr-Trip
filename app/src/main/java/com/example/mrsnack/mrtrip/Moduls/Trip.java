@@ -1,62 +1,59 @@
 package com.example.mrsnack.mrtrip.Moduls;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 public class Trip {
 
-    String location;
+    int tripId;
+    double tripPrice;
+
+    String tripLocation;
     String tripDate;
     String tripDuration;
-    double price;
-    String extras;
-    Guide guid;
-    int regNumber;
-    String transport;
+    String tripExtras;
+    String tripTransport;
     String tripType;
-    String title;
-    String tripImage;
+    String tripTitle;
+    String image;
 
 
     public Trip(String location,
                 String tripDate,
                 String tripDuration,
-                double price,
-                String extras,
-                Guide guid, int regNumber,
+                double tripPrice,
+                String tripExtras,
+                Guide guid, int tripId,
                 String transport, String tripType,
-                String title,
+                String tripTitle,
                 String tripImage) {
-        this.location = location;
+        this.tripLocation = location;
         this.tripDate = tripDate;
         this.tripDuration = tripDuration;
-        this.price = price;
-        this.extras = extras;
-        this.guid = guid;
-        this.regNumber = regNumber;
-        this.transport = transport;
+        this.tripPrice = tripPrice;
+        this.tripExtras = tripExtras;
+        this.tripId = tripId;
+        this.tripTransport = transport;
         this.tripType = tripType;
-        this.title = title;
-        this.tripImage = tripImage;
+        this.tripTitle = tripTitle;
+        this.image = tripImage;
     }
+    public Trip(){}
 
 
 
 
     public String getTripImage() {
-        return tripImage;
+        return image;
     }
 
     public void setTripImage(String tripImage) {
         tripImage = tripImage;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTripTitle() {
+        return tripTitle;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTripTitle(String tripTitle) {
+        this.tripTitle = tripTitle;
     }
 
     public String getTripType() {
@@ -69,11 +66,11 @@ public class Trip {
 
 
     public String getLocation() {
-        return location;
+        return tripLocation;
     }
 
     public void setLocation(String location) {
-        this.location = location;
+        this.tripLocation = location;
     }
 
     public String getTripDate() {
@@ -92,46 +89,36 @@ public class Trip {
         this.tripDuration = tripDuration;
     }
 
-    public double getPrice() {
-        return price;
+    public double getTripPrice() {
+        return tripPrice;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setTripPrice(double tripPrice) {
+        this.tripPrice = tripPrice;
     }
 
-    public String getExtras() {
-        return extras;
+    public String getTripExtras() {
+        return tripExtras;
     }
 
-    public void setExtras(String extras) {
-        this.extras = extras;
+    public void setTripExtras(String tripExtras) {
+        this.tripExtras = tripExtras;
     }
 
-    public Guide getGuid() {
-        return guid;
+    public int getTripId() {
+        return tripId;
     }
 
-    public void setGuid(Guide guid) {
-        this.guid = guid;
+    public void setTripId(int tripId) {
+        this.tripId = tripId;
     }
-
-    public int getRegNumber() {
-        return regNumber;
-    }
-
-    public void setRegNumber(int regNumber) {
-        this.regNumber = regNumber;
-    }
-
-
 
     public String getTransport() {
-        return transport;
+        return tripTransport;
     }
 
     public void setTransport(String transport) {
-        this.transport = transport;
+        this.tripTransport = transport;
     }
 
 }

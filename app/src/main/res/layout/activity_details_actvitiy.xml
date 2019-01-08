@@ -58,8 +58,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:fontFamily="@font/hacentrarzahd"
-                android:textSize="32sp"
+                android:fontFamily="@font/elmessiribold"
+                android:textSize="24sp"
                 android:layout_margin="16dp"
                 android:textColor="@android:color/white"
                 android:layout_gravity="bottom"
@@ -89,7 +89,7 @@
         <TextView
             android:fontFamily="@font/hacentrarzahd"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="20sp"
             toools:text="TripLocation"
             android:id="@+id/detailTripLocation"
             android:layout_width="match_parent"
@@ -99,7 +99,7 @@
         <TextView
             android:fontFamily="@font/hacentrarzahd"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="20sp"
             toools:text="TripTime"
             android:id="@+id/detailTripTime"
             android:layout_width="match_parent"
@@ -108,7 +108,7 @@
         <TextView
             android:fontFamily="@font/hacentrarzahd"
             android:textStyle="italic"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:layout_margin="8dp"
             android:textColor="@color/SecondaryText"
             toools:text="20.0"
@@ -119,21 +119,23 @@
         <TextView
             android:fontFamily="@font/hacentrarzahd"
             android:textStyle="bold"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:text="@string/longString"
             android:id="@+id/detailTrip"
             android:lineSpacingMultiplier="1.5"
+            android:textColor="@color/SecondaryText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
             android:text="احجز الان"
             android:background="@color/colorAccent"
             android:textColor="@android:color/white"
             android:textStyle="bold"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:fontFamily="@font/joumhouria"
             />
 

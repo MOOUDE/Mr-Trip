@@ -1,62 +1,79 @@
 package com.example.mrsnack.mrtrip.Data;
 
+import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.util.Log;
+
+import com.example.mrsnack.mrtrip.MainActivity;
 import com.example.mrsnack.mrtrip.Moduls.Guide;
 import com.example.mrsnack.mrtrip.Moduls.Trip;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TripsData {
+public class TripsData extends AsyncTask<Void, Void, Void> {
+
     ArrayList<Trip> trips = new ArrayList<Trip>();
+
+    FirebaseDatabase mFirebaseDatabase;
+    DatabaseReference mRef;
+    private final String TABLE_NAME = "trips";
 
     public TripsData(){
 
-        Guide guide = new Guide(100 ,
-                "Rahaf Altaher" ,
-                "05990000");
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mRef = mFirebaseDatabase.getReference(TABLE_NAME);
+    }
 
+    @Override
+    protected Void doInBackground(Void... voids) {
+        trips.clear();
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-        Trip trip = new Trip("احراش السعادة",
-                "٢٠ - ١ -٢٠١٨  ",
-               "يوم واحد ",
-        70.0,
-        "جنين مدينة فلسطينية، ومركز محافظة جنين وأكبر مدنها، تقع في شمال الضفة الغربية التابعة للسلطة الفلسطينية. تعتبر تاريخيا، إحدى مدن المثلث في شمال فلسطين، وتبعد عن القدس مسافة 75 كيلومترا إلى الشمال. تطل جنين على غور الأردن من ناحية الشرق، ومرج بن عامر إلى جهة الشمال.\n" +
-                "\n" +
-                "بالرغم من قلة عدد سكانها حتى تاريخ وقوع النكبة مقارنة بالمدن الفلسطينية الأخرى، إلا أن لها ثقلا اقتصاديا أكبر بكثير من حجمها السكاني. يبلغ عدد سكان المدينة 39,000 نسمة، أما المحافظة فيقطنها حوالي 256,000 نسمة.",
-                guide,
-        100,
-                "مشي على الاقدام",
-                " رحلة شوي ",
-                " شوي بالاحراش",
-                "https://cdn.thecrazytourist.com" +
-                        "/wp-content/uploads/2018/05/" +
-                        "ccimage-shutterstock_228813178-770x430.jpg");
+                //clearing the previous artist list
+                trips.clear();
 
+                //iterating through all the nodes
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    //getting artist
+                    Trip artist = postSnapshot.getValue(Trip.class);
+                    //adding artist to the list
 
+                    Log.d("data Sample FireBase" ,artist.getTripImage() );
 
-        Guide guide1 = new Guide(100 ,
-                "Rahaf Altaher" ,
-                "05990000");
+                    trips.add(artist);
 
+                }
+                MainActivity.setRecyclerView(trips);
 
-        Trip trip1 = new Trip("Brussels",
-                "2 - Feb - 2019 ",
-                "2 weeks",
-                700.0,
-                "Nice trip to brussels",
-                guide1,
-                100,
-                "Air",
-                "Education Trip",
-                "Brussels Trip",
-                "https://media-cdn.tripadvisor.com/media/" +
-                        "photo-s/0d/f4/de/28/amsterdam-day-trip-from.jpg"
-                );
+            }
 
-        trips.add(trip);
-        trips.add(trip1);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+
+        });
+
+        return null;
 
     }
+
+    @Override
+    protected void onPostExecute(Void result) {
+        super.onPostExecute(result);
+
+        MainActivity.setRecyclerView(trips);
+
+    }
+
 
     public ArrayList<Trip> getTrips(){
         return trips;
