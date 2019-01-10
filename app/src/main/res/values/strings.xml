@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Mr Trip</string>
     <string name="res">حجوزاتي</string>
+    <string name="all">الكل</string>
     <string name="fav">المفضلة</string>
+    <string name="resrve">احجز الان</string>
     <string name="longString">
         Lorem Ipsum is simply dummy text of the printing and
         typesetting industry. Lorem Ipsum has been the industrys

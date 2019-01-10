@@ -151,11 +151,26 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
         android:clickable="true"
+        android:id="@+id/fltBtn"
         android:src="@drawable/ic_favorite_big"
         app:backgroundTint="@color/colorAccent"
         app:fabSize="normal"
         app:layout_anchor="@+id/appbar"
         app:layout_anchorGravity="bottom|left|end"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:clickable="true"
+        android:id="@+id/rmvBtn"
+        android:src="@drawable/ic_favorite_full"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="normal"
+        android:visibility="gone"
+        app:layout_anchor="@+id/appbar"
+        app:layout_anchorGravity="bottom|left|end"/>
+
 
 
 

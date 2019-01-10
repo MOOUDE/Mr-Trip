@@ -1,18 +1,44 @@
 package com.example.mrsnack.mrtrip.Moduls;
 
-public class Trip {
 
-    int tripId;
-    double tripPrice;
+import android.arch.persistence.room.ColumnInfo;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-    String tripLocation;
-    String tripDate;
-    String tripDuration;
-    String tripExtras;
-    String tripTransport;
-    String tripType;
-    String tripTitle;
-    String image;
+@Entity(tableName = "trips")
+public class Trip implements Parcelable {
+
+    @PrimaryKey(autoGenerate = true)
+    public int tripId;
+
+    @ColumnInfo(name = "tripPrice")
+    public double tripPrice;
+
+    @ColumnInfo(name = "tripLocation")
+    public String tripLocation;
+
+    @ColumnInfo(name = "tripDate")
+    public String tripDate;
+
+    @ColumnInfo(name = "tripDuration")
+    public String tripDuration;
+
+    @ColumnInfo(name = "tripExtras")
+    public String tripExtras;
+
+    @ColumnInfo(name = "tripTransport")
+    public String tripTransport;
+
+    @ColumnInfo(name = "tripType")
+    public String tripType;
+
+    @ColumnInfo(name = "tripTitle")
+    public String tripTitle;
+
+    @ColumnInfo(name = "image")
+    public String image;
 
 
     public Trip(String location,
@@ -120,5 +146,53 @@ public class Trip {
     public void setTransport(String transport) {
         this.tripTransport = transport;
     }
+
+
+    public Trip(Parcel in){
+
+
+        this.tripPrice = in.readDouble();
+        this.tripLocation = in.readString();
+        this.tripDate =  in.readString();
+        this.tripDuration =  in.readString();
+        this.tripExtras =  in.readString();
+        this.tripTransport =  in.readString();
+        this.tripType =  in.readString();
+        this.tripTitle =  in.readString();
+        this.image =  in.readString();
+
+    }
+
+
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+
+        dest.writeDouble(this.tripPrice);
+        dest.writeString(this.tripLocation);
+        dest.writeString(this.tripDate);
+        dest.writeString(this.tripDuration);
+        dest.writeString(this.tripExtras);
+        dest.writeString(this.tripTransport);
+        dest.writeString(this.tripType);
+        dest.writeString(this.tripTitle);
+        dest.writeString(this.image);
+    }
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Trip createFromParcel(Parcel in) {
+            return new Trip(in);
+        }
+
+        public Trip[] newArray(int size) {
+            return new Trip[size];
+        }
+    };
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
 
 }

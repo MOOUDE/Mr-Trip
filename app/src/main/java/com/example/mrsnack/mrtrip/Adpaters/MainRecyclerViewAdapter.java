@@ -64,14 +64,8 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
             public void onClick(View view, int position) {
                 Intent intent = new Intent(context , DetailsActvitiy.class);
 
-                intent.putExtra("Image",trip.getTripImage());
-                intent.putExtra("type" ,trip.getTripType());
-                intent.putExtra("date" , trip.getTripDate());
-                intent.putExtra("title",trip.getTripTitle());
-                intent.putExtra("location",trip.getLocation());
-                intent.putExtra("price",trip.getTripPrice());
-                intent.putExtra("transport",trip.getTransport());
-                intent.putExtra("extra" , trip.getTripExtras());
+
+                intent.putExtra( "TRIP",trip );
 
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 

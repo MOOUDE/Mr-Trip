@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.example.mrsnack.mrtrip.MainActivity;
-import com.example.mrsnack.mrtrip.Moduls.Guide;
 import com.example.mrsnack.mrtrip.Moduls.Trip;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -14,7 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TripsData extends AsyncTask<Void, Void, Void> {
 
@@ -45,14 +43,10 @@ public class TripsData extends AsyncTask<Void, Void, Void> {
                     //getting artist
                     Trip artist = postSnapshot.getValue(Trip.class);
                     //adding artist to the list
-
                     Log.d("data Sample FireBase" ,artist.getTripImage() );
-
                     trips.add(artist);
-
                 }
                 MainActivity.setRecyclerView(trips);
-
             }
 
             @Override
